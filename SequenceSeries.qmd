@@ -1,0 +1,8 @@
+# Sequence and Series
+
+
+$$
+ \sum_{n=1}^\infty \frac{n!}{2^n}
+$$
+
+
