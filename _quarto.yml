@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "Grade 12 Mathematics"
+  subtitle: "A beginner's guide"
+  author: "Katleho Nyoni"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - SequenceSeries.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
