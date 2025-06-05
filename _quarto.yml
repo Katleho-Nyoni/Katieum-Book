@@ -6,6 +6,7 @@ book:
   title: "Grade 12 Mathematics"
   subtitle: "A beginner's guide"
   author: "Katleho Nyoni"
+  cover-image: images/KATIEUM.png
   chapters:
     - index.qmd
     - intro.qmd
