@@ -2,70 +2,52 @@
 
 ## HISTORY
 
-The idea of sequences and series’ go a long way back into the past. One of the earliest encounters could be seen around 5th BCE where the famous Greek philosopher *Zeno of Elea* introduced a number of problems where only Nine survived, which came to be known as Zeno’s Paradoxes1, these were his proposals to the questions concerning space and time at their time. On one of them, Zeno argued that a man who wanted to walk across a room, had to walk half the distance of the room first, but before travelling that distance they had to travel halfway of that half, then half of that, and repeatedly infinitely many times producing the sequence 
-$$
+The idea of sequences and series’ go a long way back into the past. One of the earliest encounters could be seen around 5th BCE where the famous Greek philosopher *Zeno of Elea* introduced a number of problems where only Nine survived, which came to be known as Zeno’s Paradoxes, these were his proposals to the questions concerning space and time at their time.
+
+![ Zeno of Elea](images/ZenoVanElea.jpg){fig-align="center"}
+
+On one of them, Zeno argued that a man who wanted to walk across a room, had to walk half the distance of the room first, but before travelling that distance they had to travel halfway of that half, then half of that, and repeatedly infinitely many times producing the sequence $$
 ...,\frac{1}{16},\frac{1}{8},\frac{1}{4},\frac{1}{2},1
 $$
 
-Which he claimed was impossible since it requires a number of infinite tasks and wouldn’t have the first distance to travel, meaning the journey wouldn’t even start. Traveling across the same room would give the sequence 
-$$
+Which he claimed was impossible since it requires a number of infinite tasks and wouldn’t have the first distance to travel, meaning the journey wouldn’t even start. Traveling across the same room would give the sequence $$
 1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},...,\frac{1}{2^n}
 $$
 
 This sequence is popularly known as the Geometric sequence. More about that later. In present day, sequence and series has become increasingly important as it is widely used in almost every field. In finance it is used to calculate the return of loans and investments, in physics it is used to study waves and their properties. In Chemistry it is used to see how chemical reactions end, in Statistics it is used to study trends, in ecology and epidemiology it is used to model populations of the same and different species. In astronomy and cosmology it is used to study the emission of radiation/energy of celestial bodies; and it is used by TikTok and Netflix to recommend you videos and movies you may like.\
-First and foremost, what’s the difference between a sequence and a series? **Sequence** : a list of ordered numbers separated by a comma e.g. 
-$$1,2,3,4,…,𝑛$$ 
-where $1$ is the 1st term denoted by $T_1$ 
-$$2,4,6,8,…,2n$$
-where $2n$ is the formula for the sequence denoted $𝑇_𝑛$ 
-$$3,6,9,12,…,2𝑛+1$$
+First and foremost, what’s the difference between a sequence and a series?
 
-Thus, a sequence is denoted by 
-$$
+**Sequence** : a list of ordered numbers separated by a comma e.g. $$1,2,3,4,…,𝑛$$ where $1$ is the 1st term denoted by $T_1$ $$2,4,6,8,…,2n$$ where $2n$ is the formula for the sequence denoted $𝑇_𝑛$ $$3,6,9,12,…,2𝑛+1$$
+
+Thus, a sequence is denoted by $$
 1, 𝑇_2, 𝑇_3,…,𝑇_𝑛 
-$$ 
-**Series** : the sum of individual terms that form a sequence, separated by an operator $\pm$ e.g. 
-$$1 + 2 +3+4+⋯ $$ 
-$$2 +4+6+8+⋯ $$ 
-$$3 +6+9+12+⋯ $$ 
-Thus, a series is denoted by 
-$$
+$$ **Series** : the sum of individual terms that form a sequence, separated by an operator $\pm$ e.g. $$1 + 2 +3+4+⋯ $$ $$2 +4+6+8+⋯ $$ $$3 +6+9+12+⋯ $$ Thus, a series is denoted by $$
 S_n = 𝑇_1 +𝑇_2+𝑇_3+⋯+𝑇_𝑛 = \sum_{i=1}^{n}T_i
-$$ 
-Where 
-$$
+$$ Where $$
  S_1 = 𝑇_1 
-$$ 
-$$
+$$ $$
  𝑆_2 = 𝑇_1 +T_2 = \sum_{i=1}^{2} T_𝑖
-$$ 
-$$
+$$ $$
  𝑆_3 = 𝑇_1 +T_2 +T_3 = \sum_{i=1}^{3} T_𝑖
-$$ 
-There are recursive and non-recursive sequences.
-**RECURSIVE** : these are sequences which whose terms are dependent on the previous term. They are a ‘regress’. A very famous one is the Fibonacci sequence that appears a lot in nature, especially in the rows of corn or becomes the sequence of the petals on a flower. *Fibonacci sequence* : 
-$$0,1,1,2,3,5,8,13,… $$ 
-Another interesting example is the logistic equation, which is often a realistic approach used to model the population of species. DEPAND\
+$$ There are recursive and non-recursive sequences.
+
+**RECURSIVE** : these are sequences which whose terms are dependent on the previous term. They are a ‘regress’. A very famous one is the Fibonacci sequence that appears a lot in nature, especially in the rows of corn or becomes the sequence of the petals on a flower. *Fibonacci sequence* : $$0,1,1,2,3,5,8,13,… $$ Another interesting example is the logistic equation, which is often a realistic approach used to model the population of species. \
 **NON-RECURSIVE** : sequences that are not recursive. These are the ‘normal’ ones. We’ll only be dealing with the Arithmetic(linear), Quadratic and Geometric sequences and series’.
 
 ## ARITHMETIC SEQUENCE
 
-An Arithmetic sequence can be seen as a linear function where the $c$ in
-$$y = mx+c $$
-can either be negative or positive. This is a constant(fixed) number that is added to each previous term to find the next. For the sake of formality, in this chapter we use the notation 
-$$
+An Arithmetic sequence can be seen as a linear function where the $c$ in $$y = mx+c $$ can either be negative or positive. This is a constant(fixed) number that is added to each previous term to find the next. For the sake of formality, in this chapter we use the notation $$
 T_n = 𝜙𝑛+𝛾                         
 $$
 
-But more importantly, to obtain the equation in 2.2 , we use the equation 
-$$
+But more importantly, to obtain the equation in 2.2 , we use the equation $$
 T_n= 𝑎+(𝑛−1)𝑑                               
-$$
-Where $𝜙 = d$ and $𝛾 = 𝑎−𝑑 $. Here $𝑇_𝑛$ denotes the general term, 𝑎 the first term of the sequence and 𝑑 is the common difference. Since a sequence is defined by 
-$$
+$$ Where $𝜙 = d$ and \$𝛾 = 𝑎−𝑑 \$. Here $𝑇_𝑛$ denotes the general term, 𝑎 the first term of the sequence and 𝑑 is the common difference. Since a sequence is defined by $$
 T_1,T_2,T_3,...,T_n
-$$ 
-\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* 
+$$
+
+\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*UPDATED TILL HERE\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+
 To obtain the next term in the arithmetic sequence you have to add the common difference 𝑑, thus Then to get the common difference 𝑑 we get it by subtracting from the previous term EXAMPLE 1\
 Suppose you’re given the arithmetic sequence 5,9,13,17,… and you’re asked to find: a) the common difference 𝑑\
 b) the next three terms c) the general term 𝑇𝑛\
