@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Sequence and Series – Grade 12 Mathematics</title>
+<title>2&nbsp; Probability – Grade 12 Mathematics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./Finance.html" rel="next">
-<link href="./Functions.html" rel="prev">
+<link href="./Functions.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -110,7 +81,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./SequenceSeries.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence and Series</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Probability.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -149,7 +120,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Probability.html" class="sidebar-item-text sidebar-link">
+  <a href="./Probability.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></span></a>
   </div>
 </li>
@@ -161,7 +132,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./SequenceSeries.html" class="sidebar-item-text sidebar-link active">
+  <a href="./SequenceSeries.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence and Series</span></span></a>
   </div>
 </li>
@@ -194,22 +165,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#history" id="toc-history" class="nav-link active" data-scroll-target="#history"><span class="header-section-number">4.1</span> HISTORY</a></li>
-  <li><a href="#arithmetic-sequence" id="toc-arithmetic-sequence" class="nav-link" data-scroll-target="#arithmetic-sequence"><span class="header-section-number">4.2</span> ARITHMETIC SEQUENCE</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sequence and Series</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability</span></h1>
 </div>
 
 
@@ -226,141 +190,8 @@ window.Quarto = {
 </header>
 
 
-<section id="history" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="history"><span class="header-section-number">4.1</span> HISTORY</h2>
-<p>The idea of sequences and series’ go a long way back into the past. One of the earliest encounters could be seen around 5th BCE where the famous Greek philosopher <em>Zeno of Elea</em> introduced a number of problems where only Nine survived, which came to be known as Zeno’s Paradoxes, these were his proposals to the questions concerning space and time at their time.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/ZenoVanElea.jpg" class="img-fluid figure-img"></p>
-<figcaption>Zeno of Elea</figcaption>
-</figure>
-</div>
-<p>On one of them, Zeno argued that a man who wanted to walk across a room, had to walk half the distance of the room first, but before travelling that distance they had to travel halfway of that half, then half of that, and repeatedly infinitely many times producing the sequence <span class="math display">\[
-...,\frac{1}{16},\frac{1}{8},\frac{1}{4},\frac{1}{2},1
-\]</span></p>
-<p>Which he claimed was impossible since it requires a number of infinite tasks and wouldn’t have the first distance to travel, meaning the journey wouldn’t even start. Traveling across the same room would give the sequence <span class="math display">\[
-1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},...,\frac{1}{2^n}
-\]</span></p>
-<p>This sequence is popularly known as the Geometric sequence. More about that later. In present day, sequence and series has become increasingly important as it is widely used in almost every field. In finance it is used to calculate the return of loans and investments, in physics it is used to study waves and their properties. In Chemistry it is used to see how chemical reactions end, in Statistics it is used to study trends, in ecology and epidemiology it is used to model populations of the same and different species. In astronomy and cosmology it is used to study the emission of radiation/energy of celestial bodies; and it is used by TikTok and Netflix to recommend you videos and movies you may like.<br>
-First and foremost, what’s the difference between a sequence and a series?</p>
-<p><strong>Sequence</strong> : a list of ordered numbers separated by a comma e.g.&nbsp;<span class="math display">\[1,2,3,4,…,𝑛\]</span> where <span class="math inline">\(1\)</span> is the 1st term denoted by <span class="math inline">\(T_1\)</span> <span class="math display">\[2,4,6,8,…,2n\]</span> where <span class="math inline">\(2n\)</span> is the formula for the sequence denoted <span class="math inline">\(𝑇_𝑛\)</span> <span class="math display">\[3,6,9,12,…,2𝑛+1\]</span></p>
-<p>Thus, a sequence is denoted by <span class="math display">\[
-1, 𝑇_2, 𝑇_3,…,𝑇_𝑛
-\]</span> <strong>Series</strong> : the sum of individual terms that form a sequence, separated by an operator <span class="math inline">\(\pm\)</span> e.g.&nbsp;<span class="math display">\[1 + 2 +3+4+⋯ \]</span> <span class="math display">\[2 +4+6+8+⋯ \]</span> <span class="math display">\[3 +6+9+12+⋯ \]</span> T hus, a series is denoted by <span class="math display">\[
-S_n = 𝑇_1 +𝑇_2+𝑇_3+⋯+𝑇_𝑛 = \sum_{i=1}^{n}T_i
-\]</span> Where <span class="math display">\[
-S_1 = 𝑇_1
-\]</span> <span class="math display">\[
-𝑆_2 = 𝑇_1 +T_2 = \sum_{i=1}^{2} T_𝑖
-\]</span> <span class="math display">\[
-𝑆_3 = 𝑇_1 +T_2 +T_3 = \sum_{i=1}^{3} T_𝑖
-\]</span> There are recursive and non-recursive sequences.</p>
-<p><strong>RECURSIVE</strong> : these are sequences which whose terms are dependent on the previous term. They are a ‘regress’. A very famous one is the Fibonacci sequence that appears a lot in nature, especially in the rows of corn or becomes the sequence of the petals on a flower. <em>Fibonacci sequence</em> : <span class="math display">\[0,1,1,2,3,5,8,13,… \]</span> Another interesting example is the logistic equation, which is often a realistic approach used to model the population of species.<br>
-<strong>NON-RECURSIVE</strong> : sequences that are not recursive. These are the ‘normal’ ones. We’ll only be dealing with the Arithmetic(linear), Quadratic and Geometric sequences and series’.</p>
-</section>
-<section id="arithmetic-sequence" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="arithmetic-sequence"><span class="header-section-number">4.2</span> ARITHMETIC SEQUENCE</h2>
-<p>An Arithmetic sequence can be seen as a linear function where the <span class="math inline">\(c\)</span> in <span class="math display">\[y = mx+c \]</span> can either be negative or positive. This is a constant(fixed) number that is added to each previous term to find the next. For the sake of formality, in this chapter we use the notation <span class="math display">\[
-T_n = 𝜙𝑛+𝛾                         
-\]</span></p>
-<p>But more importantly, to obtain the equation in 2.2 , we use the equation <span class="math display">\[
-T_n= 𝑎+(𝑛−1)𝑑                               
-\]</span> Where <span class="math inline">\(𝜙 = d\)</span> and $𝛾 = 𝑎−𝑑 $. Here <span class="math inline">\(𝑇_𝑛\)</span> denotes the general term, 𝑎 the first term of the sequence and 𝑑 is the common difference. Since a sequence is defined by <span class="math display">\[
-T_1,T_2,T_3,...,T_n
-\]</span></p>
-<p>***********************************************UPDATED TILL HERE********************************************</p>
-<p>To obtain the next term in the arithmetic sequence you have to add the common difference 𝑑, thus Then to get the common difference 𝑑 we get it by subtracting from the previous term EXAMPLE 1<br>
-Suppose you’re given the arithmetic sequence 5,9,13,17,… and you’re asked to find: a) the common difference 𝑑<br>
-b) the next three terms c) the general term 𝑇𝑛<br>
-d) using the general term, find the 100th term 5 | Page ScienceVisu<br>
-e) which term in the sequence is equal to 1181 SOLUTION a) To find 𝑑, we calculate the difference of two numbers that are next to each other, preferably from right to left. Thus selecting any two would give 𝑑 = 9−5 = 4 . Which means that the terms of our sequences are increasing by 4 each time, that is added to the previous term, since the term is positive. b) Using 𝑑 as 4 as found in the previous question we get � �5 = 17+4=21 � �6 = 21+4=25<br>
-� �7 = 25+4=29 c) Using equation 1.1.2 we obtain<br>
-� �𝑛 = 5+(𝑛−1)(4) � �𝑛 = 5+4𝑛−4 � �𝑛 = 4𝑛+1 Or alternatively, we could approach it as<br>
-� �𝑛 = (4)𝑛+(5)−(4) Which yields the same results. d) Since we now have the general term, we find the 100th term by substituting 100 where there is 𝑛 on our equation. This yields � �100 = 4(100) +1 = 401 e) Since we now have the general term, to find the nth term that is equal to 1181, we solve for 𝑛 wwhere 𝑇𝑛 = 1181 thus we get � �𝑛 = 4𝑛+1 1181 = 4𝑛+1 1181 −1 =4𝑛 4𝑛 =1180 � � =1180 4 EXAMPLE 2 =295 The first three terms of an arithmetic sequence are 2𝑥 +1 ,𝑥−3 ,3𝑥−4 a) Determine the value of 𝑥 and then write the values of the first three terms. SOLUTION What we know about the arithmetic sequence is that they have the same constant difference, thus 3𝑥 −4−(𝑥−3)=𝑥−3−(2𝑥+1) 6 | Page Sequence and Series<br>
-7 | Page 2𝑥−1=−𝑥−4 2𝑥+𝑥=−4+1 3𝑥=−3 � �= −3 3= −1 Thus the sequence is −1,−4,−7</p>
-<p>EXAMPLE 3 � �,𝑦,8,… and 1,4𝑥,3𝑦,… are arithmetic sequences. a) Determine the values of 𝑥 and 𝑦 . SOLUTION What we know about the arithmetic sequence is that they have the same constant difference, thus 8−𝑦=𝑦−𝑥 (1) ⇒ 2𝑦−8=𝑥 3𝑦−4𝑥=4𝑥−1 (2) ⇒ 3𝑦−8𝑥+1=0</p>
-<p>Which now becomes<br>
-3𝑦−8(2𝑦−8)+1=0 3𝑦−16𝑦+64+1=0 −13𝑦+65=0 � �=65 13=5 Thus 𝑥=2(5)−8=2</p>
-<p>EXAMPLE 4 Determine the arithmetic sequences if the 4th term is −6 and the 11th is −34 SOLUTION What we know is that 𝑇4=−6 and 𝑇11=−34 , thus using our equation, we obtain � �4=−6=𝑎+(4−1)𝑑 (1) � �11=−34=𝑎+(11−1)𝑑 (2) Then we solve the equations simultaneously. ⇒ 𝑎=−3𝑑−6 and<br>
-−34=(−3𝑑−6)+10𝑑 −34=7𝑑−6 −34+6=7𝑑 � �=−28 7 =−4<br>
-Then solving for 𝑎 we get � �=−3(−4)−6=6</p>
-<p>ScienceVisu<br>
-1.2 ARITHMETIC SERIES From the previous chapter, we showed that a sequence is defined as � �1, 𝑇2, 𝑇3,…,𝑇𝑛<br>
-Thus the series is<br>
-� �1 = 𝑇1 2 𝑆2 = 𝑇1 +𝑇2 =∑𝑇𝑖 𝑖=1 3 𝑆3 = 𝑇1 +𝑇2 +𝑇3 = ∑𝑇𝑖 𝑖=1 …<br>
-� � 𝑆𝑛 = 𝑇1 +𝑇2+⋯+𝑇𝑛 =∑𝑇𝑖 𝑖=1 Where 𝑆𝑛 is the sum of all the 𝑛 terms2. An arithmetic series is the sum of the arithmetic sequence terms. The formula for the sum of 𝑛 consecutive terms is given by<br>
-� �𝑛 = 𝑛 2 [2𝑎 +(𝑛−1)𝑑] (1.2.1) Or by the following equation if the last term, denoted by 𝐿 is known � �𝑛 = 𝑛 2 (𝑎 +𝐿)<br>
-where 𝐿 = 𝑎 +(𝑛−1)𝑑. (1.2.2) Before we proof that the sum of the arithmetic terms are given by (1.2.1/2), let me tell you a story : It is said that back in the 19th century, a teacher was lazy and his learners kept making noise, so he gave them the task to sum num the natural numbers 1 to 100. He knew this would keep them busy and would take them a long time. By surprise, one learner had completed within five minutes or less giving the correct answer of 5050, the teacher was perplexed and asked for the script of the young boy to see what he had done. The young man had used a trick. Suppose 𝑆100 denotes the sum of these numbers � �100 = 1+2+3+⋯98+99+100 2Notations such as ∑𝑎𝑘 were introduced by Leonard Euler who was a prominent polymath and whose work is estimated to be 800 pages of yearly manuscripts 8 | Page Sequence and Series<br>
-Reversing this would give the same answer � �100 = 100+99+98+⋯+3+2+1 Then summing the two you’d get twice the amount Suppose 𝑆100 denotes the sum of these numbers 2𝑆100 = (1+100)+(2+99)+(3+98)+⋯+(98+3)+(99+2)+(100+1) 2𝑆100 = 101 +101+101+⋯+101+101+101 2𝑆100 = 100(101) � �100 = 100(101) 2 =10100 =5050. 2 Now we’re going to use this fact to prove the equation that gives the sum of arithmetic terms<br>
-PROOF Suppose you have an arithmetic sequence � �, 𝑎 +𝑑,𝑎+2𝑑,…,𝑎+(𝑛−1)𝑑<br>
-and let the sum of these terms be denoted by<br>
-� �𝑛 = 𝑎+𝑎+𝑑+𝑎+2𝑑+⋯𝑎+(𝑛−3)𝑑+𝑎+(𝑛−2)𝑑+𝑎+(𝑛−1)𝑑 � �𝑛 = 𝑎+𝑎+𝑑+𝑎+2𝑑+⋯+𝑎+(𝑛−1)𝑑 now reversing these terms we get Now adding the two you get � �𝑛 = 𝑛 2 𝑆𝑛 = 𝑎+(𝑛−1)𝑑+⋯+𝑎+2𝑑+𝑎+𝑑+𝑎 � �𝑛 +𝑆𝑛 = (𝑎+𝑎+(𝑛−1)𝑑)+⋯+(2𝑎+(𝑛−1)𝑑)+[2𝑎+(𝑛−1)𝑑]) 2𝑆𝑛 = 𝑛[2𝑎 +(𝑛−1)𝑑] [2𝑎 +(𝑛−1)𝑑] and where 𝑙 = 𝑎 +(𝑛−1)𝑑 is the last term in the sequence/series � �𝑛 = 𝑛 2 [2𝑎 +(𝑛−1)𝑑] = 𝑛 2 [𝑎 +𝑎+(𝑛−1)𝑑] =𝑛 2 EXAMPLE 1 Determine the sum of the arithmetic series 4 + 11 + 18 + 25 +⋯+368 SOLUTION What we know is that 𝑙 = 368 and the common difference<br>
-� � =𝑇𝑛+1 −𝑇𝑛 = 7, thus using our equation, we obtain 368 = (7)𝑛+(4)−(7) 7𝑛 =368+3=371 [𝑎 +𝑙] 9 | Page ScienceVisu<br>
-� � =371 =53 7 Then solving for 𝑆𝑛 we get � �53 = 53 2 [4 +368] � �53 = 9858 EXAMPLE 2 How many terms of the arithmetic series 8 + 13 + 18 +⋯ will add up to 1700 SOLUTION What we know is that 𝑆𝑛 = 1700 and the common difference<br>
-� � =𝑇𝑛+1 −𝑇𝑛 = 5, thus using our equation, we obtain 1700 = 𝑛 2 [2(8) + (𝑛 −1)(5)] 1700 ×2 =𝑛[16+5𝑛−5] 3400 = 𝑛[5𝑛+11] = 5𝑛2+11𝑛 5𝑛2 +11𝑛−3400 =0 � � =(−𝑏±√𝑏2−4𝑎𝑐 ) 2𝑎 𝑛 =−11±√112−4(5)(−3400) 2(5) 𝑛 =−136 5 or 𝑛 = 25 Thus 𝑛 = 25 since 𝑆:ℕ → ℝ in simple. EXAMPLE 3 Given the arithmetic series −4 − 1 + 2 + ⋯ a) Calculate the smallest number of terms where 𝑆𝑛 &gt; 300 b) Determine the greatest number of terms that can be added together if the answer must be less than 100 SOLUTION a) Using our formula, we get � � 2 [2(−4) +(𝑛 −1)(3)] &gt; 300 10 | Page Sequence and Series<br>
-� �[−8 +3𝑛−3] &gt; 600 3𝑛2 −11𝑛−600 &gt; 0 � � =11±√112−4(3)(−600) 2(3) 𝑛 &gt;−12.43 or 𝑛 &gt; 16.09 Thus 𝑛 = ⌈16.09⌉ = 17 b) Almost similarly, we have � � 2 [2(−4) +(𝑛 −1)(3)] &lt; 100 3𝑛2 −11𝑛−200 &lt; 0 =11±√112 −4(3)(−200) 2(3) 𝑛 &lt;−6.53 or 𝑛 &lt; 10.20 Thus 𝑛 = ⌊10.20⌋ = 10 EXAMPLE 4 Determine the sum of natural numbers from 1 to 1000 that are not divisible by 5 SOLUTION The sequence of natural numbers is 1,2,3,4,…,1000 up to a 1000 and the sequence of numbers that ARE divisible by 5 is 5,10,15,20,…,1000. So to know the sum of ℕ that are NOT divisible we have to subtract those that are divisible from the sum of the first sequence. Thus � �1000 = 1000 2 𝑆1000 = 500500 [1 +1000] Is the sum of the first sequence. Now we have 1000 = 5𝑛+(5−5) � � =1000 5 Thus<br>
-=200 � �200 = 200 [5 +1000] 2 𝑆200 = 100500 Which is the sum of the series of terms divisible by 5. Now the sum of those that are not divisible by 5 is 11 | Page ScienceVisu<br>
-12 | Page � �1000−𝑆200=500 500−100 500=400 000</p>
-<p>1.3 GEOMETRIC SEQUENCE A geometric sequence is a sequence where the succeeding term is obtained by multiplying the previous term with a constant ratio. Given a sequence � �1,𝑇2,𝑇3,…,𝑇𝑛 Then</p>
-<p>� �𝑛=𝑎𝑟𝑛−1 (1.3.1) Where 𝑎=𝑇1, 𝑟 is the constant ratio and the general/nth term is given by 𝑇𝑛. To obtain the constant ratio 𝑟 from the previous derivation</p>
-<p>EXAMPLE 1 Consider the geometric sequence<br>
-1 2 ; 1 4 ; 1 8 ; 1 32 ;… And determine a) The nth term. Sequence and Series<br>
-13 | Page b) What term is equal to 1 1024 . c) The value of the 7th term.</p>
-<p>SOLUTION a) The common ratio is 𝑇𝑘+1 𝑇𝑘 =1 2 thus the general term is � �𝑛=(1 2)(1 2) 𝑛−1</p>
-<ol start="2" type="a">
-<li>The question is asking for 𝑛 , thus 1 1024=(1 2)(1</li>
-</ol>
-<!-- -->
-<ol start="2" type="1">
-<li>𝑛−1 =(1</li>
-<li>𝑛</li>
-</ol>
-<p>ln( 1 1024)=ln(1 2) 𝑛</p>
-<p>ln( 1 1024)=𝑛𝑙𝑛(1 2) � �= ln( 1 1024) ln( 1 2) =10</p>
-<ol start="3" type="a">
-<li>𝑇7=(1 2 )7 = 1 128</li>
-</ol>
-<p>EXAMPLE 2 The first three terms of a geometric sequence are 𝑥+2;3𝑥+1;7𝑥−1. Determine the value(s) of 𝑥.</p>
-<p>SOLUTION We know that the common ratio is<br>
-7𝑥−1 3𝑥+1=3𝑥+1 𝑥+2 Then follows<br>
-(3𝑥+1)2=(𝑥+2)(7𝑥−1) 9𝑥2+6𝑥+1=7𝑥2+13𝑥−2 2𝑥2−7𝑥+3=0 (2𝑥−1)(𝑥−3)=0 � �=1 2 or 𝑥=3</p>
-<p>ScienceVisu<br>
-14 | Page</p>
-<p>EXAMPLE 3 Determine the geometric sequence if the second term is 1 9 and the sixth term is 1 729 .</p>
-<p>SOLUTION We know<br>
-� �2=1 9=𝑎𝑟(2)−1=𝑎𝑟 � �6= 1 729=𝑎𝑟(6)−1=𝑎𝑟5</p>
-<p>Now solving simultaneously, we get 1 729=(1 9𝑟)𝑟5 1 729=(1 9)𝑟4 � �4= 1 81 √𝑟4 4 =√1 81 4</p>
-<p>� �=±1 3 Then 𝑎 is<br>
-� �=(1 9)(±1 3) −1 =±1 3 And the sequence is ±1 3 ; 1 9 ; ±1 27 depending on whether 𝑎 is positive or negative.</p>
-<p>1.4 GEOMETRIC SERIES</p>
-<p>Sequence and Series<br>
-15 | Page 1.4.1 FINITE GEOMETRIC SERIES From the previous derivation of the nth term of the geometric sequence, we have observed that a geometric sequence is defined as � �1,𝑟𝑇1,𝑟2𝑇1,𝑟3𝑇1,𝑟4𝑇1,…,𝑟𝑛−1𝑇1 Thus the geometric series is obtained by summing these individual terms. Let the sum of these terms be denoted by</p>
-<p>Thus the sum of geometric terms is given by � �𝑛=𝑇1(1−𝑟𝑛) 1−𝑟 =𝑇1(𝑟𝑛−1) 𝑟−1 , 𝑟≠1 (1.4.1)</p>
-<p>EXAMPLE 1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And<br>
-a) Calculate how many terms will be needed for the sum to be 0.8 . b) Calculate the sum of the first 200 terms. c) Determine the least number of terms for which the sum will be greater or equal to 1.</p>
-<p>SOLUTION a) The common ratio is 𝑇𝑘+1 𝑇𝑘 =1 2 thus the general term is ScienceVisu<br>
-16 | Page � �𝑛=(1 2)(1 2) 𝑛−1</p>
-<p>� �𝑛=0.8= 1 2 (( 1 2)𝑛 −1) 1 2−1</p>
-<p>−0.8×0.5=0.5((0.5)n−1) −0.8+1=0.5n ln(1 2) 𝑛 =ln(0.2)</p>
-<p>nln(1 2)=ln(0.2) n=ln(0.2) ln(0.5) =⌊2.32⌋=2</p>
-<ol start="2" type="a">
-<li>The question is asking for 𝑆200 , thus � �200= 1 2(( 1 2)200 −1) 1 2−1 =1</li>
-<li>CONVERGENCE � �𝑛=1= 1 2 (( 1 2)𝑛 −1) 1 2−1</li>
-</ol>
-<p>−0.5=0.5((0.5)n−1) −1+1=0.5n ln(1 2) 𝑛 =ln(0) n=𝐸𝑅𝑅𝑂𝑅</p>
-<p>1.4.2 INFINITE GEOMETRIC SERIES An infinite geometric sequence would be denoted as<br>
-� �1,𝑟𝑇1,𝑟2𝑇1,… And the infinite geometric series would be � �∞=𝑎+𝑎𝑟+𝑎𝑟2+⋯=∑ 𝑎𝑟𝑛−1 ∞ 𝑛=1 . Since lim 𝑛→∞ 𝑟𝑛={∞ , 𝑟&gt;1 0 , |𝑟|&lt;1 Sequence and Series<br>
-17 | Page Equation (1.4.1) becomes<br>
-� �∞= 𝑎 1−𝑟 ;𝑟≠1 (1.4.2) Furthermore, if |𝑟|&lt;1 for a Geometric Series, then the series is convergent</p>
-<p>EXAMPLE 1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And calculate 𝑆∞</p>
-<p>SOLUTION 𝑺∞= 1 2 1−1 2 =1</p>
-<p>EXAMPLE 2 Does 0.9 ̅ converge or diverge?</p>
-<p>SOLUTION 0.999999…=0.9+0.09+0.009+0.0009+⋯</p>
-<p>0.999999…= 9 10+ 9 102 + 9 103 + 9 104 +⋯</p>
-<p>0.999999…= 9 10 1− 1 10 = 9 10 9 10 =1</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -782,13 +613,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./Functions.html" class="pagination-link" aria-label="Functions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="Set Theory: An Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Set Theory: An Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./Finance.html" class="pagination-link" aria-label="Financial Mathematics">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Financial Mathematics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Functions.html" class="pagination-link" aria-label="Functions">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

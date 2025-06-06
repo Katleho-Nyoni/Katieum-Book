@@ -1,0 +1,680 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Grade 12 Mathematics},
+  pdfauthor={Katleho Nyoni},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Grade 12 Mathematics}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{A beginner's guide}
+\author{Katleho Nyoni}
+\date{}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+\markboth{Preface}{Preface}
+
+\subsection*{Welcome !}\label{welcome}
+\addcontentsline{toc}{subsection}{Welcome !}
+
+This book is part of my project I call
+\href{https://github.com/Katleho-Nyoni/Grade_12-Visual}{Katieum}, that
+uses animation to teach Mathematics and Physical Sciences to Grade 12
+learners of South Africa. Click to check the
+\href{https://www.youtube.com/watch?v=XwBtjpcyG-8}{demo}.
+
+\subsubsection*{NOTE :}\label{note}
+\addcontentsline{toc}{subsubsection}{NOTE :}
+
+This is an on-going project. The resources used will be cited. Slowly
+but surely, step by step. \textbf{Enjoy!}
+
+\bookmarksetup{startatroot}
+
+\chapter{Set Theory: An Introduction}\label{set-theory-an-introduction}
+
+\bookmarksetup{startatroot}
+
+\chapter{Probability}\label{probability}
+
+\bookmarksetup{startatroot}
+
+\chapter{Functions}\label{functions}
+
+\bookmarksetup{startatroot}
+
+\chapter{Sequence and Series}\label{sequence-and-series}
+
+\section{HISTORY}\label{history}
+
+The idea of sequences and series' go a long way back into the past. One
+of the earliest encounters could be seen around 5th BCE where the famous
+Greek philosopher \emph{Zeno of Elea} introduced a number of problems
+where only Nine survived, which came to be known as Zeno's Paradoxes,
+these were his proposals to the questions concerning space and time at
+their time.
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{images/ZenoVanElea.jpg}}
+
+}
+
+\caption{Zeno of Elea}
+
+\end{figure}%
+
+On one of them, Zeno argued that a man who wanted to walk across a room,
+had to walk half the distance of the room first, but before travelling
+that distance they had to travel halfway of that half, then half of
+that, and repeatedly infinitely many times producing the sequence \[
+...,\frac{1}{16},\frac{1}{8},\frac{1}{4},\frac{1}{2},1
+\]
+
+Which he claimed was impossible since it requires a number of infinite
+tasks and wouldn't have the first distance to travel, meaning the
+journey wouldn't even start. Traveling across the same room would give
+the sequence \[
+1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},...,\frac{1}{2^n}
+\]
+
+This sequence is popularly known as the Geometric sequence. More about
+that later. In present day, sequence and series has become increasingly
+important as it is widely used in almost every field. In finance it is
+used to calculate the return of loans and investments, in physics it is
+used to study waves and their properties. In Chemistry it is used to see
+how chemical reactions end, in Statistics it is used to study trends, in
+ecology and epidemiology it is used to model populations of the same and
+different species. In astronomy and cosmology it is used to study the
+emission of radiation/energy of celestial bodies; and it is used by
+TikTok and Netflix to recommend you videos and movies you may like.\\
+First and foremost, what's the difference between a sequence and a
+series?
+
+\textbf{Sequence} : a list of ordered numbers separated by a comma
+e.g.~\[1,2,3,4,…,𝑛\] where \(1\) is the 1st term denoted by \(T_1\)
+\[2,4,6,8,…,2n\] where \(2n\) is the formula for the sequence denoted
+\(𝑇_𝑛\) \[3,6,9,12,…,2𝑛+1\]
+
+Thus, a sequence is denoted by \[
+1, 𝑇_2, 𝑇_3,…,𝑇_𝑛 
+\] \textbf{Series} : the sum of individual terms that form a sequence,
+separated by an operator \(\pm\) e.g.~\[1 + 2 +3+4+⋯ \] \[2 +4+6+8+⋯ \]
+\[3 +6+9+12+⋯ \] T hus, a series is denoted by \[
+S_n = 𝑇_1 +𝑇_2+𝑇_3+⋯+𝑇_𝑛 = \sum_{i=1}^{n}T_i
+\] Where \[
+ S_1 = 𝑇_1 
+\] \[
+ 𝑆_2 = 𝑇_1 +T_2 = \sum_{i=1}^{2} T_𝑖
+\] \[
+ 𝑆_3 = 𝑇_1 +T_2 +T_3 = \sum_{i=1}^{3} T_𝑖
+\] There are recursive and non-recursive sequences.
+
+\textbf{RECURSIVE} : these are sequences which whose terms are dependent
+on the previous term. They are a `regress'. A very famous one is the
+Fibonacci sequence that appears a lot in nature, especially in the rows
+of corn or becomes the sequence of the petals on a flower.
+\emph{Fibonacci sequence} : \[0,1,1,2,3,5,8,13,… \] Another interesting
+example is the logistic equation, which is often a realistic approach
+used to model the population of species.\\
+\textbf{NON-RECURSIVE} : sequences that are not recursive. These are the
+`normal' ones. We'll only be dealing with the Arithmetic(linear),
+Quadratic and Geometric sequences and series'.
+
+\section{ARITHMETIC SEQUENCE}\label{arithmetic-sequence}
+
+An Arithmetic sequence can be seen as a linear function where the \(c\)
+in \[y = mx+c \] can either be negative or positive. This is a
+constant(fixed) number that is added to each previous term to find the
+next. For the sake of formality, in this chapter we use the notation \[
+T_n = 𝜙𝑛+𝛾                         
+\]
+
+But more importantly, to obtain the equation in 2.2 , we use the
+equation \[
+T_n= 𝑎+(𝑛−1)𝑑                               
+\] Where \(𝜙 = d\) and \$𝛾 = 𝑎−𝑑 \$. Here \(𝑇_𝑛\) denotes the general
+term, 𝑎 the first term of the sequence and 𝑑 is the common difference.
+Since a sequence is defined by \[
+T_1,T_2,T_3,...,T_n
+\]
+
+***********************************************UPDATED TILL
+HERE********************************************
+
+To obtain the next term in the arithmetic sequence you have to add the
+common difference 𝑑, thus Then to get the common difference 𝑑 we get it
+by subtracting from the previous term EXAMPLE 1\\
+Suppose you're given the arithmetic sequence 5,9,13,17,\ldots{} and
+you're asked to find: a) the common difference 𝑑\\
+b) the next three terms c) the general term 𝑇𝑛\\
+d) using the general term, find the 100th term 5 \textbar{} Page
+ScienceVisu\\
+e) which term in the sequence is equal to 1181 SOLUTION a) To find 𝑑, we
+calculate the difference of two numbers that are next to each other,
+preferably from right to left. Thus selecting any two would give 𝑑 = 9−5
+= 4 . Which means that the terms of our sequences are increasing by 4
+each time, that is added to the previous term, since the term is
+positive. b) Using 𝑑 as 4 as found in the previous question we get � �5
+= 17+4=21 � �6 = 21+4=25\\
+� �7 = 25+4=29 c) Using equation 1.1.2 we obtain\\
+� �𝑛 = 5+(𝑛−1)(4) � �𝑛 = 5+4𝑛−4 � �𝑛 = 4𝑛+1 Or alternatively, we could
+approach it as\\
+� �𝑛 = (4)𝑛+(5)−(4) Which yields the same results. d) Since we now have
+the general term, we find the 100th term by substituting 100 where there
+is 𝑛 on our equation. This yields � �100 = 4(100) +1 = 401 e) Since we
+now have the general term, to find the nth term that is equal to 1181,
+we solve for 𝑛 wwhere 𝑇𝑛 = 1181 thus we get � �𝑛 = 4𝑛+1 1181 = 4𝑛+1 1181
+−1 =4𝑛 4𝑛 =1180 � � =1180 4 EXAMPLE 2 =295 The first three terms of an
+arithmetic sequence are 2𝑥 +1 ,𝑥−3 ,3𝑥−4 a) Determine the value of 𝑥 and
+then write the values of the first three terms. SOLUTION What we know
+about the arithmetic sequence is that they have the same constant
+difference, thus 3𝑥 −4−(𝑥−3)=𝑥−3−(2𝑥+1) 6 \textbar{} Page Sequence and
+Series\\
+7 \textbar{} Page 2𝑥−1=−𝑥−4 2𝑥+𝑥=−4+1 3𝑥=−3 � �= −3 3= −1 Thus the
+sequence is −1,−4,−7
+
+EXAMPLE 3 � �,𝑦,8,\ldots{} and 1,4𝑥,3𝑦,\ldots{} are arithmetic
+sequences. a) Determine the values of 𝑥 and 𝑦 . SOLUTION What we know
+about the arithmetic sequence is that they have the same constant
+difference, thus 8−𝑦=𝑦−𝑥 (1) ⇒ 2𝑦−8=𝑥 3𝑦−4𝑥=4𝑥−1 (2) ⇒ 3𝑦−8𝑥+1=0
+
+Which now becomes\\
+3𝑦−8(2𝑦−8)+1=0 3𝑦−16𝑦+64+1=0 −13𝑦+65=0 � �=65 13=5 Thus 𝑥=2(5)−8=2
+
+EXAMPLE 4 Determine the arithmetic sequences if the 4th term is −6 and
+the 11th is −34 SOLUTION What we know is that 𝑇4=−6 and 𝑇11=−34 , thus
+using our equation, we obtain � �4=−6=𝑎+(4−1)𝑑 (1) � �11=−34=𝑎+(11−1)𝑑
+(2) Then we solve the equations simultaneously. ⇒ 𝑎=−3𝑑−6 and\\
+−34=(−3𝑑−6)+10𝑑 −34=7𝑑−6 −34+6=7𝑑 � �=−28 7 =−4\\
+Then solving for 𝑎 we get � �=−3(−4)−6=6
+
+ScienceVisu\\
+1.2 ARITHMETIC SERIES From the previous chapter, we showed that a
+sequence is defined as � �1, 𝑇2, 𝑇3,\ldots,𝑇𝑛\\
+Thus the series is\\
+� �1 = 𝑇1 2 𝑆2 = 𝑇1 +𝑇2 =∑𝑇𝑖 𝑖=1 3 𝑆3 = 𝑇1 +𝑇2 +𝑇3 = ∑𝑇𝑖 𝑖=1 \ldots{}\\
+� � 𝑆𝑛 = 𝑇1 +𝑇2+⋯+𝑇𝑛 =∑𝑇𝑖 𝑖=1 Where 𝑆𝑛 is the sum of all the 𝑛 terms2.
+An arithmetic series is the sum of the arithmetic sequence terms. The
+formula for the sum of 𝑛 consecutive terms is given by\\
+� �𝑛 = 𝑛 2 {[}2𝑎 +(𝑛−1)𝑑{]} (1.2.1) Or by the following equation if the
+last term, denoted by 𝐿 is known � �𝑛 = 𝑛 2 (𝑎 +𝐿)\\
+where 𝐿 = 𝑎 +(𝑛−1)𝑑. (1.2.2) Before we proof that the sum of the
+arithmetic terms are given by (1.2.1/2), let me tell you a story : It is
+said that back in the 19th century, a teacher was lazy and his learners
+kept making noise, so he gave them the task to sum num the natural
+numbers 1 to 100. He knew this would keep them busy and would take them
+a long time. By surprise, one learner had completed within five minutes
+or less giving the correct answer of 5050, the teacher was perplexed and
+asked for the script of the young boy to see what he had done. The young
+man had used a trick. Suppose 𝑆100 denotes the sum of these numbers �
+�100 = 1+2+3+⋯98+99+100 2Notations such as ∑𝑎𝑘 were introduced by
+Leonard Euler who was a prominent polymath and whose work is estimated
+to be 800 pages of yearly manuscripts 8 \textbar{} Page Sequence and
+Series\\
+Reversing this would give the same answer � �100 = 100+99+98+⋯+3+2+1
+Then summing the two you'd get twice the amount Suppose 𝑆100 denotes the
+sum of these numbers 2𝑆100 =
+(1+100)+(2+99)+(3+98)+⋯+(98+3)+(99+2)+(100+1) 2𝑆100 = 101
++101+101+⋯+101+101+101 2𝑆100 = 100(101) � �100 = 100(101) 2 =10100
+=5050. 2 Now we're going to use this fact to prove the equation that
+gives the sum of arithmetic terms\\
+PROOF Suppose you have an arithmetic sequence � �, 𝑎
++𝑑,𝑎+2𝑑,\ldots,𝑎+(𝑛−1)𝑑\\
+and let the sum of these terms be denoted by\\
+� �𝑛 = 𝑎+𝑎+𝑑+𝑎+2𝑑+⋯𝑎+(𝑛−3)𝑑+𝑎+(𝑛−2)𝑑+𝑎+(𝑛−1)𝑑 � �𝑛 =
+𝑎+𝑎+𝑑+𝑎+2𝑑+⋯+𝑎+(𝑛−1)𝑑 now reversing these terms we get Now adding the
+two you get � �𝑛 = 𝑛 2 𝑆𝑛 = 𝑎+(𝑛−1)𝑑+⋯+𝑎+2𝑑+𝑎+𝑑+𝑎 � �𝑛 +𝑆𝑛 =
+(𝑎+𝑎+(𝑛−1)𝑑)+⋯+(2𝑎+(𝑛−1)𝑑)+{[}2𝑎+(𝑛−1)𝑑{]}) 2𝑆𝑛 = 𝑛{[}2𝑎 +(𝑛−1)𝑑{]}
+{[}2𝑎 +(𝑛−1)𝑑{]} and where 𝑙 = 𝑎 +(𝑛−1)𝑑 is the last term in the
+sequence/series � �𝑛 = 𝑛 2 {[}2𝑎 +(𝑛−1)𝑑{]} = 𝑛 2 {[}𝑎 +𝑎+(𝑛−1)𝑑{]} =𝑛 2
+EXAMPLE 1 Determine the sum of the arithmetic series 4 + 11 + 18 + 25
++⋯+368 SOLUTION What we know is that 𝑙 = 368 and the common difference\\
+� � =𝑇𝑛+1 −𝑇𝑛 = 7, thus using our equation, we obtain 368 = (7)𝑛+(4)−(7)
+7𝑛 =368+3=371 {[}𝑎 +𝑙{]} 9 \textbar{} Page ScienceVisu\\
+� � =371 =53 7 Then solving for 𝑆𝑛 we get � �53 = 53 2 {[}4 +368{]} �
+�53 = 9858 EXAMPLE 2 How many terms of the arithmetic series 8 + 13 + 18
++⋯ will add up to 1700 SOLUTION What we know is that 𝑆𝑛 = 1700 and the
+common difference\\
+� � =𝑇𝑛+1 −𝑇𝑛 = 5, thus using our equation, we obtain 1700 = 𝑛 2 {[}2(8)
++ (𝑛 −1)(5){]} 1700 ×2 =𝑛{[}16+5𝑛−5{]} 3400 = 𝑛{[}5𝑛+11{]} = 5𝑛2+11𝑛 5𝑛2
++11𝑛−3400 =0 � � =(−𝑏±√𝑏2−4𝑎𝑐 ) 2𝑎 𝑛 =−11±√112−4(5)(−3400) 2(5) 𝑛 =−136
+5 or 𝑛 = 25 Thus 𝑛 = 25 since 𝑆:ℕ → ℝ in simple. EXAMPLE 3 Given the
+arithmetic series −4 − 1 + 2 + ⋯ a) Calculate the smallest number of
+terms where 𝑆𝑛 \textgreater{} 300 b) Determine the greatest number of
+terms that can be added together if the answer must be less than 100
+SOLUTION a) Using our formula, we get � � 2 {[}2(−4) +(𝑛 −1)(3){]}
+\textgreater{} 300 10 \textbar{} Page Sequence and Series\\
+� �{[}−8 +3𝑛−3{]} \textgreater{} 600 3𝑛2 −11𝑛−600 \textgreater{} 0 � �
+=11±√112−4(3)(−600) 2(3) 𝑛 \textgreater−12.43 or 𝑛 \textgreater{} 16.09
+Thus 𝑛 = ⌈16.09⌉ = 17 b) Almost similarly, we have � � 2 {[}2(−4) +(𝑛
+−1)(3){]} \textless{} 100 3𝑛2 −11𝑛−200 \textless{} 0 =11±√112
+−4(3)(−200) 2(3) 𝑛 \textless−6.53 or 𝑛 \textless{} 10.20 Thus 𝑛 =
+⌊10.20⌋ = 10 EXAMPLE 4 Determine the sum of natural numbers from 1 to
+1000 that are not divisible by 5 SOLUTION The sequence of natural
+numbers is 1,2,3,4,\ldots,1000 up to a 1000 and the sequence of numbers
+that ARE divisible by 5 is 5,10,15,20,\ldots,1000. So to know the sum of
+ℕ that are NOT divisible we have to subtract those that are divisible
+from the sum of the first sequence. Thus � �1000 = 1000 2 𝑆1000 = 500500
+{[}1 +1000{]} Is the sum of the first sequence. Now we have 1000 =
+5𝑛+(5−5) � � =1000 5 Thus\\
+=200 � �200 = 200 {[}5 +1000{]} 2 𝑆200 = 100500 Which is the sum of the
+series of terms divisible by 5. Now the sum of those that are not
+divisible by 5 is 11 \textbar{} Page ScienceVisu\\
+12 \textbar{} Page � �1000−𝑆200=500 500−100 500=400 000
+
+1.3 GEOMETRIC SEQUENCE A geometric sequence is a sequence where the
+succeeding term is obtained by multiplying the previous term with a
+constant ratio. Given a sequence � �1,𝑇2,𝑇3,\ldots,𝑇𝑛 Then
+
+� �𝑛=𝑎𝑟𝑛−1 (1.3.1) Where 𝑎=𝑇1, 𝑟 is the constant ratio and the
+general/nth term is given by 𝑇𝑛. To obtain the constant ratio 𝑟 from the
+previous derivation
+
+EXAMPLE 1 Consider the geometric sequence\\
+1 2 ; 1 4 ; 1 8 ; 1 32 ;\ldots{} And determine a) The nth term. Sequence
+and Series\\
+13 \textbar{} Page b) What term is equal to 1 1024 . c) The value of the
+7th term.
+
+SOLUTION a) The common ratio is 𝑇𝑘+1 𝑇𝑘 =1 2 thus the general term is �
+�𝑛=(1 2)(1 2) 𝑛−1
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The question is asking for 𝑛 , thus 1 1024=(1 2)(1
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  𝑛−1 =(1
+\item
+  𝑛
+\end{enumerate}
+
+ln( 1 1024)=ln(1 2) 𝑛
+
+ln( 1 1024)=𝑛𝑙𝑛(1 2) � �= ln( 1 1024) ln( 1 2) =10
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  𝑇7=(1 2 )7 = 1 128
+\end{enumerate}
+
+EXAMPLE 2 The first three terms of a geometric sequence are
+𝑥+2;3𝑥+1;7𝑥−1. Determine the value(s) of 𝑥.
+
+SOLUTION We know that the common ratio is\\
+7𝑥−1 3𝑥+1=3𝑥+1 𝑥+2 Then follows\\
+(3𝑥+1)2=(𝑥+2)(7𝑥−1) 9𝑥2+6𝑥+1=7𝑥2+13𝑥−2 2𝑥2−7𝑥+3=0 (2𝑥−1)(𝑥−3)=0 � �=1 2
+or 𝑥=3
+
+ScienceVisu\\
+14 \textbar{} Page
+
+EXAMPLE 3 Determine the geometric sequence if the second term is 1 9 and
+the sixth term is 1 729 .
+
+SOLUTION We know\\
+� �2=1 9=𝑎𝑟(2)−1=𝑎𝑟 � �6= 1 729=𝑎𝑟(6)−1=𝑎𝑟5
+
+Now solving simultaneously, we get 1 729=(1 9𝑟)𝑟5 1 729=(1 9)𝑟4 � �4= 1
+81 √𝑟4 4 =√1 81 4
+
+� �=±1 3 Then 𝑎 is\\
+� �=(1 9)(±1 3) −1 =±1 3 And the sequence is ±1 3 ; 1 9 ; ±1 27
+depending on whether 𝑎 is positive or negative.
+
+1.4 GEOMETRIC SERIES
+
+Sequence and Series\\
+15 \textbar{} Page 1.4.1 FINITE GEOMETRIC SERIES From the previous
+derivation of the nth term of the geometric sequence, we have observed
+that a geometric sequence is defined as �
+�1,𝑟𝑇1,𝑟2𝑇1,𝑟3𝑇1,𝑟4𝑇1,\ldots,𝑟𝑛−1𝑇1 Thus the geometric series is
+obtained by summing these individual terms. Let the sum of these terms
+be denoted by
+
+Thus the sum of geometric terms is given by � �𝑛=𝑇1(1−𝑟𝑛) 1−𝑟 =𝑇1(𝑟𝑛−1)
+𝑟−1 , 𝑟≠1 (1.4.1)
+
+EXAMPLE 1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And\\
+a) Calculate how many terms will be needed for the sum to be 0.8 . b)
+Calculate the sum of the first 200 terms. c) Determine the least number
+of terms for which the sum will be greater or equal to 1.
+
+SOLUTION a) The common ratio is 𝑇𝑘+1 𝑇𝑘 =1 2 thus the general term is
+ScienceVisu\\
+16 \textbar{} Page � �𝑛=(1 2)(1 2) 𝑛−1
+
+� �𝑛=0.8= 1 2 (( 1 2)𝑛 −1) 1 2−1
+
+−0.8×0.5=0.5((0.5)n−1) −0.8+1=0.5n ln(1 2) 𝑛 =ln(0.2)
+
+nln(1 2)=ln(0.2) n=ln(0.2) ln(0.5) =⌊2.32⌋=2
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The question is asking for 𝑆200 , thus � �200= 1 2(( 1 2)200 −1) 1 2−1
+  =1
+\item
+  CONVERGENCE � �𝑛=1= 1 2 (( 1 2)𝑛 −1) 1 2−1
+\end{enumerate}
+
+−0.5=0.5((0.5)n−1) −1+1=0.5n ln(1 2) 𝑛 =ln(0) n=𝐸𝑅𝑅𝑂𝑅
+
+1.4.2 INFINITE GEOMETRIC SERIES An infinite geometric sequence would be
+denoted as\\
+� �1,𝑟𝑇1,𝑟2𝑇1,\ldots{} And the infinite geometric series would be �
+�∞=𝑎+𝑎𝑟+𝑎𝑟2+⋯=∑ 𝑎𝑟𝑛−1 ∞ 𝑛=1 . Since lim 𝑛→∞ 𝑟𝑛=\{∞ , 𝑟\textgreater1 0 ,
+\textbar 𝑟\textbar\textless1 Sequence and Series\\
+17 \textbar{} Page Equation (1.4.1) becomes\\
+� �∞= 𝑎 1−𝑟 ;𝑟≠1 (1.4.2) Furthermore, if \textbar 𝑟\textbar\textless1
+for a Geometric Series, then the series is convergent
+
+EXAMPLE 1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And calculate
+𝑆∞
+
+SOLUTION 𝑺∞= 1 2 1−1 2 =1
+
+EXAMPLE 2 Does 0.9 ̅ converge or diverge?
+
+SOLUTION 0.999999\ldots=0.9+0.09+0.009+0.0009+⋯
+
+0.999999\ldots= 9 10+ 9 102 + 9 103 + 9 104 +⋯
+
+0.999999\ldots= 9 10 1− 1 10 = 9 10 9 10 =1
+
+\bookmarksetup{startatroot}
+
+\chapter{Financial Mathematics}\label{financial-mathematics}
+
+\bookmarksetup{startatroot}
+
+\chapter{Calculus}\label{calculus}
+
+\bookmarksetup{startatroot}
+
+\chapter{Summary}\label{summary}
+
+In summary, this book has no content whatsoever.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{+} \DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2
+\end{verbatim}
+
+\bookmarksetup{startatroot}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
+\end{CSLReferences}
+
+
+
+
+\end{document}
