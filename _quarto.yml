@@ -10,7 +10,11 @@ book:
   chapters:
     - index.qmd
     - intro.qmd
+    - Probability.qmd
+    - Functions.qmd
     - SequenceSeries.qmd
+    - Finance.qmd
+    - Calculus.qmd
     - summary.qmd
     - references.qmd
 
