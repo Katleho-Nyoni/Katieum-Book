@@ -108,5 +108,15 @@
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sequence and Series</span>"
     ]
+  },
+  {
+    "objectID": "SequenceSeries.html#infinite-geometric-series",
+    "href": "SequenceSeries.html#infinite-geometric-series",
+    "title": "4  Sequence and Series",
+    "section": "4.6 INFINITE GEOMETRIC SERIES",
+    "text": "4.6 INFINITE GEOMETRIC SERIES\nAn infinite geometric sequence would be denoted as\n� �1,𝑟𝑇1,𝑟2𝑇1,… And the infinite geometric series would be � �∞=𝑎+𝑎𝑟+𝑎𝑟2+⋯=∑ 𝑎𝑟𝑛−1 ∞ 𝑛=1 . Since lim 𝑛→∞ 𝑟𝑛={∞ , 𝑟&gt;1 0 , |𝑟|&lt;1 Sequence and Series\n17 | Page Equation (1.4.1) becomes\n� �∞= 𝑎 1−𝑟 ;𝑟≠1 (1.4.2) Furthermore, if |𝑟|&lt;1 for a Geometric Series, then the series is convergent\n\n4.6.1 EXAMPLE\n1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And calculate 𝑆∞\n\n4.6.1.1 SOLUTION\n𝑺∞= 1 2 1−1 2 =1\nEXAMPLE 2 Does 0.9 ̅ converge or diverge?\nSOLUTION 0.999999…=0.9+0.09+0.009+0.0009+⋯\n0.999999…= 9 10+ 9 102 + 9 103 + 9 104 +⋯\n0.999999…= 9 10 1− 1 10 = 9 10 9 10 =1",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Sequence and Series</span>"
+    ]
   }
 ]

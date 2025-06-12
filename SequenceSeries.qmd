@@ -173,14 +173,17 @@ c)  CONVERGENCE � �𝑛=1= 1 2 (( 1 2)𝑛 −1) 1 2−1
 
 −0.5=0.5((0.5)n−1) −1+1=0.5n ln(1 2) 𝑛 =ln(0) n=𝐸𝑅𝑅𝑂𝑅
 
-### INFINITE GEOMETRIC SERIES An infinite geometric sequence would be denoted as\
+## INFINITE GEOMETRIC SERIES
+An infinite geometric sequence would be denoted as\
 � �1,𝑟𝑇1,𝑟2𝑇1,… And the infinite geometric series would be � �∞=𝑎+𝑎𝑟+𝑎𝑟2+⋯=∑ 𝑎𝑟𝑛−1 ∞ 𝑛=1 . Since lim 𝑛→∞ 𝑟𝑛={∞ , 𝑟\>1 0 , \|𝑟\|\<1 Sequence and Series\
 17 \| Page Equation (1.4.1) becomes\
 � �∞= 𝑎 1−𝑟 ;𝑟≠1 (1.4.2) Furthermore, if \|𝑟\|\<1 for a Geometric Series, then the series is convergent
 
-EXAMPLE 1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And calculate 𝑆∞
+### EXAMPLE
+1 Consider the geometric series 1 2+1 4+1 8+1 32+⋯ And calculate 𝑆∞
 
-SOLUTION 𝑺∞= 1 2 1−1 2 =1
+#### SOLUTION 
+𝑺∞= 1 2 1−1 2 =1
 
 EXAMPLE 2 Does 0.9 ̅ converge or diverge?
 
