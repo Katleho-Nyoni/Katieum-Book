@@ -4,6 +4,8 @@
 
 This book is part of my project I call [Katieum](https://github.com/Katleho-Nyoni/Grade_12-Visual), that uses animation to teach Mathematics and Physical Sciences to Grade 12 learners of South Africa. Click to check the [demo](https://www.youtube.com/watch?v=XwBtjpcyG-8).
 
+![](images/Plan.svg)
+
 #### NOTE :
 
 This is an on-going project. The resources used will be cited. Slowly but surely, step by step. **Enjoy!**
