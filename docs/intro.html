@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -165,8 +194,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#history" id="toc-history" class="nav-link active" data-scroll-target="#history"><span class="header-section-number">1.1</span> HISTORY</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1"><span class="header-section-number">1.2</span> EXAMPLE 1</a>
+  <ul class="collapse">
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution"><span class="header-section-number">1.2.1</span> SOLUTION</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -190,8 +229,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="history" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="history"><span class="header-section-number">1.1</span> HISTORY</h2>
+<p>The idea of grouping things has existed for the longest of time in the history of the Modern Homo Sapiens specie. The study of grouping objects was later called set theory, where a set is a collection/grouping of objects. The study of modern set theory is often attributed to one of its founders, a prominent German mathematician—George Cantor along with another German mathematician Richard Dedekind, which they developed in the 1870s.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/G.Cantor.jpeg" class="img-fluid figure-img"></p>
+<figcaption>George Cantor</figcaption>
+</figure>
+</div>
+<p>As the topic was relatively new and hot at the time, it received backlashes often from older mathematicians who did not embrace new idea. A famous mathematician and philosopher, Bertrand Russell also attacked some of these ideas which gave birth to a concepts like Russell’s Paradoxes or fuzzy set theory. However, as I’ve outline that this isn’t a new idea, you have also used sets in your daily life. Informally, a <strong>set</strong> is a collection of objects or elements. These objects are also called members. A classroom is a set made of students, and these students are the members of this set. In that same classroom, we can have a set which consists of only boys. Remember that the art of grouping can group things that have similarities or are entirely different. The classroom set has both girls and boys. The similarity is that they’re all human. The set grouping all boys in that classroom share the similarity being that they’re boys, but they’re most likely different in many other ways, from names to their Blood Pressure. Thus a set is often denoted with a capital letter, while the elements are denoted by small letters. Let <span class="math display">\[
+V = \{𝑎,𝑒,𝑖,𝑜,𝑢\}
+\]</span> Be an example where the set <span class="math inline">\(V\)</span> is the set of all vowels. Where <span class="math inline">\(𝑎,𝑒,𝑖,𝑜,𝑢\)</span> are the members of the set <span class="math inline">\(V\)</span>. The curly braces means “the set of”. Since <span class="math inline">\(u\)</span> and <span class="math inline">\(a, 𝑒,𝑖, 𝑜,𝑢\)</span> are elements of <span class="math inline">\(V\)</span>, we denote it as <span class="math inline">\(u𝜖V\)</span> and <span class="math display">\[(𝑎,𝑒,𝑖,𝑜,𝑢)𝜖V ≡ 𝑎,𝑒,𝑖,𝑜,𝑢𝜖V\]</span></p>
+<p>Respectively. It oath to be noted that the <em>order</em> of elements in the set and <em>repetition</em> are not important, thus a set with elements <span class="math display">\[\{𝑜, 𝑒, 𝑢,𝑎,𝑖\}\]</span> and <span class="math display">\[\{𝑎,𝑎,𝑖,𝑖,𝑖,𝑖,𝑖,𝑜,𝑢,𝑒,𝑒\} \]</span> Are the same as the set <span class="math inline">\(V\)</span>. The number of elements within a set are referred to as a <strong>Cardinality</strong>, denoted by the absolute bars <span class="math inline">\(|𝑋|\)</span> where 𝑋 is a set. Thus the cardinality of the set of vowels 𝑉 is 5 denoted <span class="math display">\[|V| = 5\]</span>.</p>
+<p>Another simple example would be as follows, lets call it the Black Box example :</p>
+<p>Suppose you have a Black Box in a class, then ask each and every student to put a paper inside of the box(more like voting). The papers could be different colors and shapes, or just all plain White square papers.<br>
+The Box will act as a set while the papers of the students inside the box are regarded as the elements of the set(or elements of the box). If the box was empty, then we’d say the box is an <strong>empty set/null set</strong>. This is a special case of a set and it is denoted by</p>
+<p><span class="math inline">\(\phi\)</span> or empty curly braces <span class="math inline">\(\{\}\)</span>. In turn, <span class="math inline">\(\phi = \{\}\)</span> with a cardinality of 0.</p>
+</section>
+<section id="example-1" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.2</span> EXAMPLE 1</h2>
+<p>Suppose there are three sets <span class="math display">\[A = \phi \]</span> <span class="math display">\[B = \{\phi\} \]</span> <span class="math display">\[C = \{\} \]</span></p>
+<ol type="1">
+<li>Which of these are equal?
+<ul>
+<li>𝐴 and 𝐵</li>
+<li>𝐴 and 𝐶 c) 𝐵 and 𝐶 2. What are the cardinalities of each set?</li>
+</ul></li>
+</ol>
+<section id="solution" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="solution"><span class="header-section-number">1.2.1</span> SOLUTION</h3>
+<p>� � = {} 1. For the first question : a. 𝐴 and 𝐵 are not equal since 𝐴 is a null set-without elements while 𝐵 is a set that has a null set as an element. Thus, 𝐴 ≠ 𝐵 b. 𝐴 and 𝐶 are equal since 𝐴 is a null set-without elements and � � is also set that has no elements in it. Thus 𝐴 = 𝐶 c.&nbsp;𝐵 and 𝐶 are not equal since 𝐵 is a set that has a null set as an element while 𝐶 is a null set-without elements . Thus, 𝐵 ≠ 𝐶 2. As for the cardinalities |𝐴| = |𝐶| = 0 |𝐵| = 1. 4 | Page Probability Theory<br>
+1.2 SUBSETS � � A subset can informally be defined as a set within a set. As per the name suggests, it a portion of a set and it is denoted by ⊆. Formally, we say the set 1 is the subset of � � 2 if every element of � � 1 is also an element in � � 2 . Suppose you have three sets 𝐴 = {2,4,6,8,10} ; 𝐵 = {2,6,8} and 𝐶 = {2,6}. � � is the subset of 𝐴 and 𝐵 since 2 &amp; 6 are in both the sets 𝐴 and 𝐵,that is � � ⊆𝐴 and 𝐶 ⊆𝐵.<br>
+Set 𝐵 is a subset of 𝐴 but not of 𝐶. That is<br>
+� � ⊆𝐴 and 𝐵 ⊈𝐶.<br>
+And lastly 𝐴 is not a subset of either sets. Every set is a subset of itself. Common basic sets which are also subsets of others include :<br>
+o Integers: all set of numbers without a decimal. These are all set of integers which are either positive or negative. Represented by the symbol ℤ denoted by ℤ = {…,−3,−2,−1,0,1,2,3,…}. o Natural Numbers: all positive integers EXCEPT 0. Represented by the symbol ℕ denoted by ℕ = {1,2,3,…}. o Whole Numbers: all positive integers INCLUDING 0, denoted by ℕ0 = {0,1,2,3, …}. o Rational Numbers: Represented by the symbol ℚ. All fractions of the form<br>
+ℚ={𝑎 𝑏 | 𝑎,𝑏 ∈ ℤ ,𝑏≠ 0 }. o Irrational numbers: numbers that are thought not to be rational are said to be irrational. o Imaginary Numbers: imagined numbers that may not exist where √−1 =𝑖 o Real Numbers: all numbers that can be quantified and thought not to be imaginary. These numbers are made up by both rational and irrational numbers Represented by the symbol ℝ o Complex Numbers: a combination of both real and imaginary numbers. Represented by the symbol ℂ and denoted as ℂ = {𝑎 + 𝑏𝑖 | 𝑎,𝑏 ∈ ℝ 𝑎𝑛𝑑 𝑖2 = −1} 5 | Page ScienceVisu<br>
+1.3 SET OPERATIONS Suppose you`re given two sets 𝑆 = {𝑎,𝑏,𝑐} and 𝑇 = {1,𝑏,2} A Union contains all elements of sets, denoted by ∪ S or T =S∪𝑇={𝑎,𝑏,𝑐,1,2} the notation S ∪ 𝑇 is called 𝑆 union 𝑇 which is equivalent to 𝑆 𝑜𝑟 𝑇. Intersection are common elements within the sets, denoted by ∩ � � 𝑎𝑛𝑑 𝑇 =𝑆∩𝑇={𝑏} the notation 𝑆 ∩ 𝑇 is called 𝑆 intersection 𝑇 which is equivalent to 𝑆 𝑎𝑛𝑑 𝑇. Universal set: A set that contains every element denoted 𝓊. Complement : all elements within a universal set THAT IS NOT within the given set, denoted as 𝑛𝑜𝑡 𝐴 = 𝐴′ = 𝐴𝐶 = 𝐴. Difference/Relative complement : these are elements in the set 𝑆 BUT NOT in 𝑇 where<br>
+� � −𝑇=𝑆∩𝑇̅ ={𝑎,𝑐} There are also addition, subtraction and multiplication for sets</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

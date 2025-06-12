@@ -4,7 +4,7 @@
 
 The idea of sequences and series’ go a long way back into the past. One of the earliest encounters could be seen around 5th BCE where the famous Greek philosopher *Zeno of Elea* introduced a number of problems where only Nine survived, which came to be known as Zeno’s Paradoxes, these were his proposals to the questions concerning space and time at their time.
 
-![Zeno of Elea](images/ZenoVanElea.jpg){fig-align="center"}
+![ Zeno of Elea](images/ZenoVanElea.jpg){fig-align="center"}
 
 On one of them, Zeno argued that a man who wanted to walk across a room, had to walk half the distance of the room first, but before travelling that distance they had to travel halfway of that half, then half of that, and repeatedly infinitely many times producing the sequence $$
 ...,\frac{1}{16},\frac{1}{8},\frac{1}{4},\frac{1}{2},1
